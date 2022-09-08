@@ -17,9 +17,11 @@ public class myServlet extends HttpServlet {
         //java JDBC连接数据库 1、打开数据库 2、sql语句请求数据库得到 3、数据处理封装 4、关闭数据库
         //新建一个包 把所有与数据库操作有关的放到这个包下
         //每一个模块需要创建一个接口 + 一个实现类
+//        response.getWriter().println("hello test");
+//        String name="testname";
         UserDao userDao=new UserDaoImpl();
         request.setAttribute("name",userDao.findUser());
-        request.getRequestDispatcher("index,jsp").forward(request,response);
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 
     @Override
